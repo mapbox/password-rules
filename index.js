@@ -12,19 +12,19 @@ module.exports = function(pw, rules) {
             message: 'Password must be at least ' + rules.minimumLength + ' letters long'
         });
     }
-    if (pw.match(/[A-Z]/g)) {
+    if (rules.requireCapital && !pw.match(/[A-Z]/g)) {
         issues.push({
             reason: 'requireCapital',
             message: 'Password must contain a capital letter'
         });
     }
-    if (pw.match(/[a-z]/g)) {
+    if (rules.requireLower && !pw.match(/[a-z]/g)) {
         issues.push({
             reason: 'requireLower',
             message: 'Password must contain a lowercase letter'
         });
     }
-    if (pw.match(/\d/g)) {
+    if (rules.requireNumber && !pw.match(/\d/g)) {
         issues.push({
             reason: 'requireNumber',
             message: 'Password must contain a number'

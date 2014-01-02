@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/mapbox/password-rules/issues"
   },
-  "homepage": "https://github.com/mapbox/password-rules"
+  "homepage": "https://github.com/mapbox/password-rules",
+  "devDependencies": {
+    "tap": "~0.4.6"
+  }
 }
