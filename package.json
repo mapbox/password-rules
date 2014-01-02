@@ -1,0 +1,25 @@
+{
+  "name": "password-rules",
+  "version": "0.0.0",
+  "description": "enforce rules for reasonable passwords",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/rules.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mapbox/password-rules.git"
+  },
+  "keywords": [
+    "password",
+    "rules",
+    "enforcement",
+    "security"
+  ],
+  "author": "Tom MacWright",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/mapbox/password-rules/issues"
+  },
+  "homepage": "https://github.com/mapbox/password-rules"
+}
