@@ -19,11 +19,18 @@ Options:
 * `requireLower`: default true
 * `requireNumber`: default true
 
-Returns `false` if there are no issues or an array of objects in the form
+Returns `false` if there are no issues. Otherwise, returns an object like
 
 ```js
-{
-    reason: 'requireNumber',
-    message: 'Password must contain a number'
-}
+{ sentence: 'Password must be at least 8 letters long, contain a capital letter, and contain a number.',
+  issues:
+   [ { reason: 'minimumLength',
+       message: 'Password must be at least 8 letters long',
+       part: 'be at least 8 letters long' },
+     { reason: 'requireCapital',
+       message: 'Password must contain a capital letter',
+       part: 'contain a capital letter' },
+     { reason: 'requireNumber',
+       message: 'Password must contain a number',
+       part: 'contain a number' } ] }
 ```
