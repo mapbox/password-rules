@@ -8,6 +8,8 @@ Enforce rules on passwords.
 
     npm install --save password-rules
 
+Or download `password-rules.js` for a browser.
+
 ## api
 
 ### `rules('pw', options)`
