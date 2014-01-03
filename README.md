@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mapbox/password-rules.png)](https://travis-ci.org/mapbox/password-rules)
+
 # password-rules
 
 Enforce rules on passwords.
