@@ -6,7 +6,7 @@ module.exports = function(pw, rules) {
     def(rules, 'requireLower', true);
     def(rules, 'requireNumber', true);
 
-    if (pw.length <= rules.minimumLength) {
+    if (pw.length < rules.minimumLength) {
         issues.push({
             reason: 'minimumLength',
             message: 'Password must be at least ' + rules.minimumLength + ' letters long',
