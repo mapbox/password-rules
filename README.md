@@ -20,11 +20,12 @@ Options:
 * `requireCapital`: default true
 * `requireLower`: default true
 * `requireNumber`: default true
+* `requireSpecial`: default true
 
 Returns `false` if there are no issues. Otherwise, returns an object like
 
 ```js
-{ sentence: 'Password must be at least 8 letters long, contain a capital letter, and contain a number.',
+{ sentence: 'Password must be at least 8 letters long, contain a capital letter, contain a number, and contain a special character.',
   issues:
    [ { reason: 'minimumLength',
        message: 'Password must be at least 8 letters long',
@@ -34,5 +35,8 @@ Returns `false` if there are no issues. Otherwise, returns an object like
        part: 'contain a capital letter' },
      { reason: 'requireNumber',
        message: 'Password must contain a number',
-       part: 'contain a number' } ] }
+       part: 'contain a number' },
+     { reason: 'requireSpecial',
+       message: 'Password must contain a special character',
+       part: 'contain a special character'} ] }
 ```

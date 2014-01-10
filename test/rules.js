@@ -20,6 +20,13 @@ test('issues', function(t) {
         requireNumber: false
     }).issues[1].reason, 'requireLower', 'requires a lowercase letter');
 
+
+    t.equal(rules('foo', {
+        requireCapital: false,
+        requireLower: true,
+        requireNumber: false,
+     }).issues[1].reason, 'requireSpecial', 'requires a special character');
+     
     t.end();
 });
 
@@ -27,26 +34,36 @@ test('sentences', function(t) {
     t.equal(rules('foo', {
         requireCapital: false,
         requireLower: false,
-        requireNumber: false
+        requireNumber: false,
+        requireSpecial: false
     }).sentence, 'Password must be at least 8 letters long.', 'number');
 
     t.equal(rules('foo', {
         requireCapital: true,
         requireLower: false,
-        requireNumber: false
+        requireNumber: false,
+        requireSpecial: false
     }).sentence, 'Password must be at least 8 letters long and contain a capital letter.', 'number');
 
     t.equal(rules('foo', {
         requireCapital: true,
         requireLower: false,
-        requireNumber: true
+        requireNumber: true,
+        requireSpecial: false
     }).sentence, 'Password must be at least 8 letters long, contain a capital letter, and contain a number.', 'number');
 
     t.equal(rules('', {
         requireCapital: true,
         requireLower: true,
-        requireNumber: true
+        requireNumber: true,
+        requireSpecial: false
     }).sentence, 'Password must be at least 8 letters long, contain a capital letter, contain a lowercase letter, and contain a number.', 'number');
+
+    t.equal(rules('foo', {
+        requireCapital: false,
+        requireLower: true,
+        requireNumber: false
+    }).sentence, 'Password must be at least 8 letters long and contain a special character.', 'number');
 
     t.end();
 });
