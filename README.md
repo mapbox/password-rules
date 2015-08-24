@@ -20,7 +20,7 @@ Options:
 * `requireCapital`: default true
 * `requireLower`: default true
 * `requireNumber`: default true
-* `requireSpecial`: default true
+* `requireSpecial`: default false
 
 Returns `false` if there are no issues. Otherwise, returns an object like
 

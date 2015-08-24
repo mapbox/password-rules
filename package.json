@@ -4,7 +4,7 @@
   "description": "enforce rules for reasonable passwords",
   "main": "index.js",
   "scripts": {
-    "test": "node test/rules.js",
+    "test": "tap --coverage test/rules.js",
     "make": "browserify -s passwordRules index.js > password-rules.js"
   },
   "repository": {
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/mapbox/password-rules",
   "devDependencies": {
-    "tap": "~0.4.6",
+    "tap": "~1.3.2",
     "browserify": "~3.18.0"
   }
 }

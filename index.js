@@ -5,7 +5,7 @@ module.exports = function(pw, rules) {
     def(rules, 'requireCapital', true);
     def(rules, 'requireLower', true);
     def(rules, 'requireNumber', true);
-    def(rules, 'requireSpecial', true);
+    def(rules, 'requireSpecial', false);
 
     if (pw.length < rules.minimumLength) {
         issues.push({

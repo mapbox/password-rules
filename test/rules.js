@@ -20,13 +20,13 @@ test('issues', function(t) {
         requireNumber: false
     }).issues[1].reason, 'requireLower', 'requires a lowercase letter');
 
-
     t.equal(rules('foo', {
         requireCapital: false,
         requireLower: true,
         requireNumber: false,
+        requireSpecial: true
      }).issues[1].reason, 'requireSpecial', 'requires a special character');
-     
+
     t.end();
 });
 
@@ -62,7 +62,8 @@ test('sentences', function(t) {
     t.equal(rules('foo', {
         requireCapital: false,
         requireLower: true,
-        requireNumber: false
+        requireNumber: false,
+        requireSpecial: true
     }).sentence, 'Password must be at least 8 letters long and contain a special character.', 'number');
 
     t.end();
