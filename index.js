@@ -5,6 +5,7 @@ module.exports = function(pw, rules) {
     def(rules, 'requireCapital', true);
     def(rules, 'requireLower', true);
     def(rules, 'requireNumber', true);
+    def(rules, 'requireSpecial', false);
 
     if (pw.length < rules.minimumLength) {
         issues.push({
@@ -32,6 +33,13 @@ module.exports = function(pw, rules) {
             reason: 'requireNumber',
             message: 'Password must contain a number',
             part: 'contain a number'
+        });
+    }
+    if (rules.requireSpecial && !pw.match(/\W+/g)) {
+        issues.push({
+            reason: 'requireSpecial',
+            message: 'Password must contain a special character',
+            part: 'contain a special character'
         });
     }
 
