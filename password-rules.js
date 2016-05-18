@@ -3,7 +3,7 @@ module.exports = function(pw, rules) {
     var issues = [];
     rules = rules || {};
     def(rules, 'minimumLength', 8);
-    def(rules, 'maximumLength', null);
+    def(rules, 'maximumLength', Infinity);
     def(rules, 'requireCapital', true);
     def(rules, 'requireLower', true);
     def(rules, 'requireNumber', true);
@@ -16,7 +16,7 @@ module.exports = function(pw, rules) {
             part: 'be at least ' + rules.minimumLength + ' letters long'
         });
     }
-    if (rules.maximumLength && pw.length > rules.maximumLength) {
+    if (pw.length > rules.maximumLength) {
         issues.push({
             reason: 'maximumLength',
             message: 'Password must be less than ' + rules.maximumLength + ' letters long',
