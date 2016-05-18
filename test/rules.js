@@ -8,6 +8,13 @@ test('issues', function(t) {
         requireNumber: false
     }).issues[0].reason, 'minimumLength', 'requires a minimum length');
 
+    t.equal(rules('4CqKsBN7zcTzCixx59xyXlKE5VmfNW9MxcrQgGkWUEfhgfSULUjsrhD0ZEHAaagUBR8LtgeuZ', {
+        requireCapital: false,
+        maximumLength: 72,
+        requireLower: false,
+        requireNumber: false
+    }).issues[0].reason, 'maximumLength', 'requires a maximum length');
+
     t.equal(rules('foo', {
         requireCapital: true,
         requireLower: false,
@@ -37,6 +44,14 @@ test('sentences', function(t) {
         requireNumber: false,
         requireSpecial: false
     }).sentence, 'Password must be at least 8 letters long.', 'number');
+
+    t.equal(rules('4CqKsBN7zcTzCixx59xyXlKE5VmfNW9MxcrQgGkWUEfhgfSULUjsrhD0ZEHAaagUBR8LtgeuZ', {
+        requireCapital: false,
+        maximumLength: 72,
+        requireLower: false,
+        requireNumber: false,
+        requireSpecial: false
+    }).sentence, 'Password must be less than 72 letters long.', 'number');
 
     t.equal(rules('foo', {
         requireCapital: true,

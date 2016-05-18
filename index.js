@@ -2,6 +2,7 @@ module.exports = function(pw, rules) {
     var issues = [];
     rules = rules || {};
     def(rules, 'minimumLength', 8);
+    def(rules, 'maximumLength', Infinity);
     def(rules, 'requireCapital', true);
     def(rules, 'requireLower', true);
     def(rules, 'requireNumber', true);
@@ -12,6 +13,13 @@ module.exports = function(pw, rules) {
             reason: 'minimumLength',
             message: 'Password must be at least ' + rules.minimumLength + ' letters long',
             part: 'be at least ' + rules.minimumLength + ' letters long'
+        });
+    }
+    if (pw.length > rules.maximumLength) {
+        issues.push({
+            reason: 'maximumLength',
+            message: 'Password must be less than ' + rules.maximumLength + ' letters long',
+            part: 'be less than ' + rules.maximumLength + ' letters long'
         });
     }
     if (rules.requireCapital && !pw.match(/[A-Z]/g)) {
