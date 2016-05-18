@@ -17,6 +17,7 @@ Or download `password-rules.js` for a browser.
 Options:
 
 * `minimumLength`: default 8
+* `maximumLength`: default not configured
 * `requireCapital`: default true
 * `requireLower`: default true
 * `requireNumber`: default true

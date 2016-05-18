@@ -1,6 +1,6 @@
 {
   "name": "password-rules",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "enforce rules for reasonable passwords",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/mapbox/password-rules",
   "devDependencies": {
-    "tap": "~1.3.2",
-    "browserify": "~3.18.0"
+    "browserify": "^13.0.1",
+    "tap": "^5.7.1"
   }
 }
