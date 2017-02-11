@@ -1,30 +1,30 @@
 {
-  "name": "password-rules",
-  "version": "0.0.3",
-  "description": "enforce rules for reasonable passwords",
-  "main": "index.js",
-  "scripts": {
-    "test": "tap --coverage test/rules.js",
-    "make": "browserify -s passwordRules index.js > password-rules.js"
-  },
+  "license": "BSD-2-Clause", 
+  "name": "password-rules", 
   "repository": {
-    "type": "git",
-    "url": "https://github.com/mapbox/password-rules.git"
-  },
-  "keywords": [
-    "password",
-    "rules",
-    "enforcement",
-    "security"
-  ],
-  "author": "Tom MacWright",
-  "license": "BSD",
+    "url": "https://github.com/mapbox/password-rules.git", 
+    "type": "git"
+  }, 
+  "author": "Tom MacWright", 
   "bugs": {
     "url": "https://github.com/mapbox/password-rules/issues"
-  },
-  "homepage": "https://github.com/mapbox/password-rules",
+  }, 
+  "version": "0.0.3", 
+  "scripts": {
+    "test": "tap --coverage test/rules.js", 
+    "make": "browserify -s passwordRules index.js > password-rules.js"
+  }, 
+  "keywords": [
+    "password", 
+    "rules", 
+    "enforcement", 
+    "security"
+  ], 
   "devDependencies": {
-    "browserify": "^13.0.1",
-    "tap": "^5.7.1"
-  }
+    "tap": "^5.7.1", 
+    "browserify": "^13.0.1"
+  }, 
+  "main": "index.js", 
+  "homepage": "https://github.com/mapbox/password-rules", 
+  "description": "enforce rules for reasonable passwords"
 }
